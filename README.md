@@ -173,7 +173,7 @@ Rencana pengembangan Uang Jajan Pintar 2 meliputi:
 
 **Pemilik repository GitHub:** `sifaidha27`
 
-**Nama anggota/pengembang:** Syah Irfan Gaotama Sifa Nur Idha 
+**Nama anggota/pengembang:** Syah Irfan Gaotama & Sifa Nur Idha 
 
 **Asal sekolah/kelas:** SMA MUHAMMADIYAH 2 SUMBERPUCUNG
 
