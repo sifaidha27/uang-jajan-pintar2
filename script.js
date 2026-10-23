@@ -3,7 +3,7 @@
    Hanya JavaScript murni. Data tersimpan di localStorage.
    ========================================================== */
 (() => {
-  'use strict'; 
+  'use strict';
 
   const KUNCI = 'jajanpintar:v1';
   const $ = (id) => document.getElementById(id);
@@ -560,7 +560,7 @@
       ctx.fill();
       if (d.hariIni) {
         ctx.lineWidth = 3;
-        ctx.strokeStyle = warna('--koin');
+        ctx.strokeStyle = warna('--koin-tua');
         ctx.stroke();
       }
 
@@ -950,6 +950,26 @@
     bukaDialog($('dialogAwal'));
   }
 
+  /* ---------- Tema ---------- */
+  function temaSekarang() {
+    return document.documentElement.dataset.tema === 'gelap' ? 'gelap' : 'terang';
+  }
+
+  function setTema(t, simpanPilihan) {
+    document.documentElement.dataset.tema = t;
+    if (simpanPilihan) {
+      try { localStorage.setItem('tema', t); } catch (err) { /* diabaikan */ }
+    }
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'gelap' ? '#151a2e' : '#f8f9fd');
+
+    const tombol = $('tombolTema');
+    tombol.textContent = t === 'gelap' ? '☀️' : '🌙';
+    tombol.setAttribute('aria-pressed', String(t === 'gelap'));
+
+    gambarGrafik();
+  }
+
   /* ---------- Pasang semua pendengar ---------- */
   function pasangEvent() {
     $('formAwal').addEventListener('submit', kirimAwal);
@@ -980,6 +1000,9 @@
     $('kalkTarget').addEventListener('input', hitungKalkulator);
     $('kalkPerHari').addEventListener('input', hitungKalkulator);
 
+    $('tombolTema').addEventListener('click', () => {
+      setTema(temaSekarang() === 'gelap' ? 'terang' : 'gelap', true);
+    });
     $('tombolPengaturan').addEventListener('click', bukaPengaturan);
     $('tombolBatalPengaturan').addEventListener('click', () => tutupDialog($('dialogPengaturan')));
     $('formPengaturan').addEventListener('submit', kirimPengaturan);
@@ -999,6 +1022,14 @@
 
   /* ---------- Mulai ---------- */
   pasangEvent();
+  setTema(temaSekarang(), false);
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    let sudahPilih = false;
+    try { sudahPilih = !!localStorage.getItem('tema'); } catch (err) { /* diabaikan */ }
+    if (!sudahPilih) setTema(e.matches ? 'gelap' : 'terang', false);
+  });
+
   if (state.siap) {
     tampilkanAplikasi();
   } else {
