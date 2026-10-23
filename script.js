@@ -177,7 +177,7 @@
     kanvas.height = tinggi * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const warna = ['#7b9cf0', '#ffd978', '#4fbf9a', '#f38ba0', '#a9bff7'];
+    const warna = ['#7b9cf0', '#a8e6c3', '#4fbf9a', '#f38ba0', '#a9bff7'];
     const bagian = Array.from({ length: 110 }, () => ({
       x: lebar / 2 + (Math.random() - 0.5) * 80,
       y: tinggi * 0.35,
