@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#2447D6">
+  <meta name="theme-color" content="#f8f9fd">
   <meta name="description" content="JajanPintar: catat uang jajan, atur tabungan, dan kumpulkan lencana hemat.">
   <title>JajanPintar – Pelatih Uang Jajan</title>
 
@@ -12,6 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script>
+  (function () {
+    var t;
+    try { t = localStorage.getItem('tema'); } catch (e) {}
+    if (t !== 'gelap' && t !== 'terang') {
+      t = matchMedia('(prefers-color-scheme: dark)').matches ? 'gelap' : 'terang';
+    }
+    document.documentElement.dataset.tema = t;
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'gelap' ? '#151a2e' : '#f8f9fd');
+  })();
+</script>
 </head>
 <body>
 
@@ -90,7 +102,10 @@
           <p class="subsapaan" id="kalimatSemangat">Yuk, atur jajanmu hari ini</p>
         </div>
       </div>
-      <button type="button" id="tombolPengaturan" class="tombol-ikon" aria-label="Buka pengaturan">⚙️</button>
+      <div class="kepala-kanan">
+  <button type="button" id="tombolTema" class="tombol-ikon" aria-label="Ganti mode gelap" aria-pressed="false">🌙</button>
+  <button type="button" id="tombolPengaturan" class="tombol-ikon" aria-label="Buka pengaturan">⚙️</button>
+</div>
     </header>
 
     <div class="status-bar" aria-label="Level dan streak">
