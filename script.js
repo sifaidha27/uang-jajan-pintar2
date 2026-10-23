@@ -3,7 +3,7 @@
    Hanya JavaScript murni. Data tersimpan di localStorage.
    ========================================================== */
 (() => {
-  'use strict';
+  'use strict'; 
 
   const KUNCI = 'jajanpintar:v1';
   const $ = (id) => document.getElementById(id);
