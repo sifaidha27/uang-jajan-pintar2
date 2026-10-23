@@ -7,8 +7,8 @@
   --biru: #7b9cf0;
   --biru-tua: #5f7fd1;
   --biru-muda: #eaf0ff;
-  --koin: #ffd978;
-  --koin-tua: #e8bb4f;
+    --koin: #a8e6c3;
+  --koin-tua: #6fc99a;
   --daun: #4fbf9a;
   --daun-muda: #e3f6ef;
   --jambu: #f38ba0;
@@ -487,7 +487,7 @@ button { cursor: pointer; }
   box-shadow: 0 4px 0 var(--koin-tua);
 }
 
-.tombol-utama:hover { background: #ffe29a; }
+.tombol-utama:hover { background: #c4f0d8; }
 
 .tombol-pinggir {
   background: var(--putih);
