@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2447D6">
+  <meta name="description" content="JajanPintar: catat uang jajan, atur tabungan, dan kumpulkan lencana hemat.">
+  <title>JajanPintar – Pelatih Uang Jajan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== Sapaan awal: isi nama dan uang jajan ====== -->
+  <dialog id="dialogAwal" aria-labelledby="judulAwal">
+    <form id="formAwal" method="dialog" class="dialog-isi">
+      <div class="maskot" aria-hidden="true">🐼</div>
+      <h2 id="judulAwal">Halo! Aku Pijan, pelatih uang jajanmu</h2>
+      <p>Isi dua hal ini dulu, ya. Agar datamu tersimpan di perangkat ini 😉</p>
+
+      <label for="inputNama">Namamu</label>
+      <input type="text" id="inputNama" maxlength="20" placeholder="Contoh: Rani" required autocomplete="given-name">
+
+      <label for="inputUangMingguan">Uang jajan per minggu (Rp)</label>
+      <input type="number" id="inputUangMingguan" min="1000" step="500" placeholder="Contoh: 50000" inputmode="numeric" required>
+
+      <label for="inputHariJajan">Berapa hari kamu jajan dalam seminggu?</label>
+      <select id="inputHariJajan">
+        <option value="5" selected>5 hari (Senin–Jumat)</option>
+        <option value="6">6 hari</option>
+        <option value="7">7 hari</option>
+      </select>
+
+      <button type="submit" class="tombol tombol-utama">Mulai atur uang jajan</button>
+    </form>
+  </dialog>
+
+  <!-- ====== Pengaturan ====== -->
+  <dialog id="dialogPengaturan" aria-labelledby="judulPengaturan">
+    <form id="formPengaturan" method="dialog" class="dialog-isi">
+      <h2 id="judulPengaturan">Pengaturan</h2>
+
+      <fieldset>
+        <legend>Pembagian uang jajan masuk (total 100%)</legend>
+        <div class="baris-persen">
+          <label for="persenJajan">Jajan</label>
+          <input type="number" id="persenJajan" min="0" max="100" value="50" inputmode="numeric">
+          <span>%</span>
+        </div>
+        <div class="baris-persen">
+          <label for="persenTabung">Tabungan</label>
+          <input type="number" id="persenTabung" min="0" max="100" value="30" inputmode="numeric">
+          <span>%</span>
+        </div>
+        <div class="baris-persen">
+          <label for="persenBerbagi">Berbagi</label>
+          <input type="number" id="persenBerbagi" min="0" max="100" value="20" inputmode="numeric">
+          <span>%</span>
+        </div>
+        <p id="infoPersen" class="bantuan" role="status"></p>
+      </fieldset>
+
+      <label for="inputUangMingguanUbah">Uang jajan per minggu (Rp)</label>
+      <input type="number" id="inputUangMingguanUbah" min="1000" step="500" inputmode="numeric">
+
+      <div class="baris-tombol">
+        <button type="button" id="tombolEkspor" class="tombol tombol-pinggir">Unduh riwayat (CSV)</button>
+        <button type="button" id="tombolReset" class="tombol tombol-bahaya">Hapus semua data</button>
+      </div>
+
+      <div class="baris-tombol">
+        <button type="button" id="tombolBatalPengaturan" class="tombol tombol-pinggir">Tutup</button>
+        <button type="submit" class="tombol tombol-utama">Simpan pengaturan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ====== Aplikasi utama ====== -->
+  <div id="aplikasi" class="aplikasi" hidden>
+
+    <header class="kepala">
+      <div class="kepala-kiri">
+        <div class="avatar" aria-hidden="true">🐼</div>
+        <div>
+          <h1 class="sapaan">Halo, <span id="namaPengguna">Teman</span>!</h1>
+          <p class="subsapaan" id="kalimatSemangat">Yuk, atur jajanmu hari ini</p>
+        </div>
+      </div>
+      <button type="button" id="tombolPengaturan" class="tombol-ikon" aria-label="Buka pengaturan">⚙️</button>
+    </header>
+
+    <div class="status-bar" aria-label="Level dan streak">
+      <div class="lencana-status">
+        <span class="label-kecil">Level</span>
+        <strong id="teksLevel">1</strong>
+      </div>
+      <div class="meter-level">
+        <div class="meter-level-isi" id="barLevel" style="width:0%"></div>
+        <span class="meter-level-teks" id="teksPoin">0 poin</span>
+      </div>
+      <div class="lencana-status">
+        <span class="label-kecil">Streak</span>
+        <strong><span id="teksStreak">0</span> 🔥</strong>
+      </div>
+    </div>
+
+    <main>
+
+      <!-- ===== Beranda ===== -->
+      <section id="tab-beranda" class="panel" aria-labelledby="judulBeranda">
+        <h2 id="judulBeranda" class="sr-only">Beranda</h2>
+
+        <div class="kartu-saldo">
+          <p class="label-kecil">Saldo jajan</p>
+          <p class="saldo" id="teksSaldo">Rp0</p>
+          <div class="saldo-detail">
+            <div>
+              <span class="label-kecil">Batas hari ini</span>
+              <strong id="teksBatasHarian">Rp0</strong>
+            </div>
+            <div>
+              <span class="label-kecil">Sudah dipakai</span>
+              <strong id="teksPakaiHariIni">Rp0</strong>
+            </div>
+          </div>
+          <div class="bar" role="progressbar" aria-label="Pemakaian batas harian" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barHarian">
+            <div class="bar-isi" id="barHarianIsi"></div>
+          </div>
+        </div>
+
+        <div id="peringatan" class="peringatan" role="alert" hidden></div>
+
+        <div class="tiga-pos">
+          <article class="pos pos-jajan">
+            <h3>Jajan</h3>
+            <p class="pos-angka" id="posJajan">Rp0</p>
+            <p class="pos-persen" id="labelPersenJajan">50%</p>
+          </article>
+          <article class="pos pos-tabung">
+            <h3>Tabungan</h3>
+            <p class="pos-angka" id="posTabung">Rp0</p>
+            <p class="pos-persen" id="labelPersenTabung">30%</p>
+          </article>
+          <article class="pos pos-berbagi">
+            <h3>Berbagi</h3>
+            <p class="pos-angka" id="posBerbagi">Rp0</p>
+            <p class="pos-persen" id="labelPersenBerbagi">20%</p>
+          </article>
+        </div>
+
+        <div class="kartu">
+          <div class="kartu-judul">
+            <h3>Pengeluaran 7 hari terakhir</h3>
+            <span class="bantuan" id="totalMingguan">Rp0</span>
+          </div>
+          <canvas id="grafikMingguan" width="600" height="280" role="img" aria-label="Grafik batang pengeluaran 7 hari terakhir"></canvas>
+          <p id="deskripsiGrafik" class="sr-only"></p>
+        </div>
+
+        <div class="kartu">
+          <div class="kartu-judul">
+            <h3>Tantangan minggu ini</h3>
+            <span class="bantuan" id="sisaTantangan">0 dari 3 selesai</span>
+          </div>
+          <ul class="daftar-tantangan" id="daftarTantangan"></ul>
+        </div>
+
+        <div class="kartu kartu-tips">
+          <h3>Tips hari ini</h3>
+          <p id="teksTips">Catat jajanmu segera setelah membeli, supaya tidak lupa</p>
+        </div>
+      </section>
+
+      <!-- ===== Catat ===== -->
+      <section id="tab-catat" class="panel" aria-labelledby="judulCatat" hidden>
+        <h2 id="judulCatat">Catat uang</h2>
+
+        <form id="formTransaksi" class="kartu form-kartu" novalidate>
+          <div class="pilih-tipe" role="radiogroup" aria-label="Jenis catatan">
+            <input type="radio" name="tipe" id="tipeKeluar" value="keluar" checked>
+            <label for="tipeKeluar">Uang keluar</label>
+            <input type="radio" name="tipe" id="tipeMasuk" value="masuk">
+            <label for="tipeMasuk">Uang masuk</label>
+          </div>
+
+          <label for="inputJumlah">Jumlah (Rp)</label>
+          <input type="number" id="inputJumlah" min="100" step="100" placeholder="Contoh: 8000" inputmode="numeric" required>
+
+          <div id="grupKategori">
+            <label for="inputKategori">Untuk apa?</label>
+            <select id="inputKategori">
+              <option value="jajan">🍡 Jajan</option>
+              <option value="transport">🚌 Transport</option>
+              <option value="sekolah">✏️ Keperluan sekolah</option>
+              <option value="berbagi">🤝 Berbagi</option>
+              <option value="lainnya">🧩 Lainnya</option>
+            </select>
+          </div>
+
+          <label for="inputCatatan">Catatan (boleh kosong)</label>
+          <input type="text" id="inputCatatan" maxlength="40" placeholder="Contoh: bakso kantin">
+
+          <p id="pesanForm" class="pesan-form" role="alert" hidden></p>
+          <button type="submit" class="tombol tombol-utama">Simpan catatan</button>
+        </form>
+
+        <div class="kartu">
+          <div class="kartu-judul">
+            <h3>Riwayat</h3>
+            <select id="filterRiwayat" aria-label="Saring riwayat">
+              <option value="semua">Semua</option>
+              <option value="keluar">Uang keluar</option>
+              <option value="masuk">Uang masuk</option>
+            </select>
+          </div>
+          <ul class="daftar-riwayat" id="daftarRiwayat"></ul>
+          <p class="kosong" id="riwayatKosong">Belum ada catatan. Simpan catatan pertamamu di atas.</p>
+        </div>
+      </section>
+
+      <!-- ===== Target ===== -->
+      <section id="tab-target" class="panel" aria-labelledby="judulTarget" hidden>
+        <h2 id="judulTarget">Target Tabungan</h2>
+
+        <div class="kartu" id="kartuTarget" hidden>
+          <div class="kartu-judul">
+            <h3 id="namaTarget">Target</h3>
+            <button type="button" id="tombolHapusTarget" class="tombol-teks">Ganti target</button>
+          </div>
+          <p class="angka-target"><strong id="terkumpulTarget">Rp0</strong> dari <span id="nominalTarget">Rp0</span></p>
+          <div class="bar bar-tebal" role="progressbar" aria-label="Kemajuan tabungan" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barTarget">
+            <div class="bar-isi bar-isi-tabung" id="barTargetIsi"></div>
+          </div>
+          <p class="bantuan" id="sisaTarget"></p>
+
+          <form id="formSetor" class="baris-setor">
+            <label for="inputSetor" class="sr-only">Jumlah setoran</label>
+            <input type="number" id="inputSetor" min="100" step="100" placeholder="Setor berapa? (Rp)" inputmode="numeric" required>
+            <button type="submit" class="tombol tombol-utama">Setor</button>
+          </form>
+          <p class="bantuan">Uang setoran diambil dari saldo pos Tabungan.</p>
+          <p id="pesanSetor" class="pesan-form" role="alert" hidden></p>
+        </div>
+
+        <form id="formTarget" class="kartu form-kartu" novalidate>
+          <h3>Buat target baru</h3>
+          <label for="inputNamaTarget">Mau beli apa?</label>
+          <input type="text" id="inputNamaTarget" maxlength="30" placeholder="Contoh: Sepatu baru">
+
+          <label for="inputNominalTarget">Harganya (Rp)</label>
+          <input type="number" id="inputNominalTarget" min="1000" step="500" placeholder="Contoh: 300000" inputmode="numeric">
+
+          <p id="pesanTarget" class="pesan-form" role="alert" hidden></p>
+          <button type="submit" class="tombol tombol-utama">Simpan target</button>
+        </form>
+
+        <div class="kartu">
+          <h3>Hitung waktu menabung</h3>
+          <div class="baris-kalkulator">
+            <label for="kalkTarget">Target (Rp)</label>
+            <input type="number" id="kalkTarget" min="1000" step="500" inputmode="numeric" placeholder="300000">
+          </div>
+          <div class="baris-kalkulator">
+            <label for="kalkPerHari">Tabungan per hari (Rp)</label>
+            <input type="number" id="kalkPerHari" min="500" step="500" inputmode="numeric" placeholder="5000">
+          </div>
+          <p class="hasil-kalkulator" id="hasilKalkulator" role="status">Isi dua kolom di atas untuk melihat hasilnya.</p>
+        </div>
+      </section>
+
+      <!-- ===== Lencana ===== -->
+      <section id="tab-lencana" class="panel" aria-labelledby="judulLencana" hidden>
+        <h2 id="judulLencana">Lencana</h2>
+        <p class="bantuan"><span id="jumlahLencana">0</span> dari <span id="totalLencana">0</span> lencana terkumpul</p>
+        <ul class="grid-lencana" id="gridLencana"></ul>
+      </section>
+
+    </main>
+
+    <nav class="navigasi" aria-label="Menu utama">
+      <button type="button" class="nav-tombol aktif" data-tab="beranda" aria-current="page">
+        <span class="nav-ikon" aria-hidden="true">🏠</span><span>Beranda</span>
+      </button>
+      <button type="button" class="nav-tombol" data-tab="catat">
+        <span class="nav-ikon" aria-hidden="true">✍️</span><span>Catat</span>
+      </button>
+      <button type="button" class="nav-tombol" data-tab="target">
+        <span class="nav-ikon" aria-hidden="true">🎯</span><span>Target</span>
+      </button>
+      <button type="button" class="nav-tombol" data-tab="lencana">
+        <span class="nav-ikon" aria-hidden="true">🏅</span><span>Lencana</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Pemberitahuan singkat dan perayaan -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <canvas id="konfeti" class="konfeti" aria-hidden="true"></canvas>
+
+  <noscript>
+    <p class="noscript">JajanPintar butuh JavaScript. Aktifkan JavaScript di browsermu, lalu muat ulang halaman ini.</p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
