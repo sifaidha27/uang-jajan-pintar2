@@ -183,8 +183,8 @@ Jika proyek dikerjakan secara berkelompok, tambahkan seluruh anggota beserta per
 
 | No. | Nama anggota | Peran |
 |---|---|---|
-| 1 | Syah Irfan Gaotama | Pengembang / ketua proyek |
-| 2 | Sifa Nur Idha | Pengembang |
+| 1 | Syah Irfan Gaotama | Pengembang /  |
+| 2 | Sifa Nur Idha | Pengembang / ketua proyek |
 
 
 ## 📂 Struktur Repository
