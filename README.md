@@ -179,8 +179,6 @@ Rencana pengembangan Uang Jajan Pintar 2 meliputi:
 
 **Peran:** Pengembangan aplikasi web, desain antarmuka, pengujian fitur, dan dokumentasi proyek.
 
-Jika proyek dikerjakan secara berkelompok, tambahkan seluruh anggota beserta perannya:
-
 | No. | Nama anggota | Peran |
 |---|---|---|
 | 1 | Syah Irfan Gaotama | Pengembang   |
