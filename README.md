@@ -1,6 +1,6 @@
 # 💰 Uang Jajan Pintar 2
 
-**Aplikasi pencatatan dan pengelolaan uang jajan untuk membantu pelajar belajar mengatur keuangan sejak dini.**
+**Website pencatatan dan pengelolaan uang jajan untuk membantu pelajar belajar mengatur keuangan sejak dini.**
 
 ## 📌 Deskripsi Produk
 
@@ -102,12 +102,8 @@ Contoh tersebut hanya ilustrasi. Hasil sebenarnya bergantung pada data yang dibe
 
 ## 📖 Panduan Penggunaan
 
-### 1. Membuka Aplikasi
-Buka tautan website yang dipublikasikan oleh pemilik repository. Jika menggunakan GitHub Pages, tautannya biasanya berbentuk:
-
+### 1. Membuka Website
 `https://sifaidha27.github.io/uang-jajan-pintar2/`
-
-Ganti bagian tersebut dengan alamat website yang sebenarnya.
 
 ### 2. Mengisi Informasi Awal
 Ikuti formulir awal aplikasi untuk memasukkan nama dan informasi uang jajan sesuai petunjuk yang tersedia.
