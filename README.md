@@ -105,7 +105,7 @@ Contoh tersebut hanya ilustrasi. Hasil sebenarnya bergantung pada data yang dibe
 ### 1. Membuka Aplikasi
 Buka tautan website yang dipublikasikan oleh pemilik repository. Jika menggunakan GitHub Pages, tautannya biasanya berbentuk:
 
-`https://NAMA-PENGGUNA.github.io/NAMA-REPOSITORY/`
+`https://sifaidha27.github.io/uang-jajan-pintar2/`
 
 Ganti bagian tersebut dengan alamat website yang sebenarnya.
 
