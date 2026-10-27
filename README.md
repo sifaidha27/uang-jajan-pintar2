@@ -1,109 +1,90 @@
-# 💰 Uang Jajan Pintar 
+# 💰 Uang Jajan Pintar
 
-**Website pencatatan dan pengelolaan uang jajan untuk membantu pelajar belajar mengatur keuangan sejak dini.**
+**💡 Website pencatatan dan pengelolaan uang jajan untuk membantu pelajar belajar mengatur keuangan sejak dini.**
 
-## 📌 Deskripsi Produk
+## 📌 Judul dan Deskripsi Produk
 
-Uang Jajan Pintar 2 adalah aplikasi web yang dirancang untuk membantu pelajar mengelola uang jajan dengan lebih mudah, teratur, dan bertanggung jawab.
+Uang Jajan Pintar adalah aplikasi web yang dirancang untuk membantu pelajar mengelola uang jajan dengan lebih mudah, teratur, dan bertanggung jawab. Aplikasi ini membantu pengguna mencatat pemasukan dan pengeluaran, membagi uang berdasarkan kebutuhan, memantau saldo, membuat target tabungan, serta membangun kebiasaan keuangan yang baik melalui fitur tantangan dan lencana. Proyek ini dikembangkan sebagai media pembelajaran literasi keuangan dan teknologi digital bagi pelajar.
 
-Aplikasi ini membantu pengguna mencatat pemasukan dan pengeluaran, membagi uang berdasarkan kebutuhan, memantau saldo, membuat target tabungan, serta membangun kebiasaan keuangan yang baik melalui fitur tantangan dan lencana.
+### 📚 Latar Belakang
 
-Proyek ini dikembangkan sebagai media pembelajaran literasi keuangan dan teknologi digital bagi pelajar.
+Pelajar terkadang mengalami kesulitan mengatur uang jajan, seperti lupa mencatat pengeluaran, tidak mengetahui sisa uang, dan kesulitan menyisihkan uang untuk tabungan. Oleh karena itu, dibuatlah website Uang Jajan Pintar sebagai alat bantu untuk mencatat pemasukan dan pengeluaran serta memantau tabungan.
 
-### 🎯 Tujuan Produk
+### 🎯 Target Pengguna
 
-- Membiasakan pelajar mencatat pemasukan dan pengeluaran.
-- Membantu pengguna mengetahui sisa uang jajan.
-- Mendorong kebiasaan menabung secara rutin.
-- Mengajarkan pengelolaan uang berdasarkan kebutuhan dan prioritas.
-- Memanfaatkan teknologi untuk mendukung literasi keuangan.
-- Mengembangkan aplikasi web yang mudah digunakan melalui HP maupun komputer.
+Target pengguna website ini adalah pelajar yang ingin belajar mengelola uang jajan, mengontrol pengeluaran, dan membangun kebiasaan menabung.
 
 ## ✨ Fitur Aplikasi
 
-### 1. Beranda
+### 🏠 1. Beranda
 Menampilkan ringkasan kondisi keuangan pengguna, termasuk saldo dan informasi pengelolaan uang.
 
-### 2. Pencatatan Transaksi
+### 📝 2. Pencatatan Transaksi
 Pengguna dapat mencatat uang masuk dan pengeluaran berdasarkan kategori, seperti:
-- Jajan
-- Transportasi
-- Keperluan sekolah
-- Berbagi
-- Lainnya
+- 🍜 Jajan
+- 🚌 Transportasi
+- 📚 Keperluan sekolah
+- 🤝 Berbagi
+- 📦 Lainnya
 
-### 3. Pembagian Uang
+### 💵 3. Pembagian Uang
 Membantu pengguna membagi uang ke dalam pos jajan, tabungan, dan berbagi sesuai persentase yang ditentukan.
 
-### 4. Target Tabungan
+### 🎯 4. Target Tabungan
 Pengguna dapat membuat target tabungan, menentukan nominal yang dibutuhkan, melakukan setoran, dan memantau kemajuan target.
 
-### 5. Kalkulator Tabungan
+### 🧮 5. Kalkulator Tabungan
 Membantu memperkirakan waktu yang diperlukan untuk mencapai target berdasarkan jumlah tabungan per hari.
 
-### 6. Riwayat dan Grafik
+### 📊 6. Riwayat dan Grafik
 Membantu pengguna melihat catatan keuangan dan memahami kebiasaan pengeluaran.
 
-### 7. Poin, Streak, Tantangan, dan Lencana
+### 🏆 7. Poin, Streak, Tantangan, dan Lencana
 Mendorong pengguna untuk rutin mencatat transaksi dan membangun kebiasaan mengatur uang.
 
-### 8. Penyimpanan Data
-Data aplikasi disimpan menggunakan `localStorage` pada browser sehingga data dapat tetap tersedia ketika halaman dimuat ulang pada browser dan perangkat yang sama.
-
-### 9. AI Logbook — Pengembangan Fitur
-AI Logbook direncanakan sebagai fitur pendamping yang membantu pengguna memahami kebiasaan keuangan melalui ringkasan transaksi, refleksi harian, dan saran penghematan.
-
-Integrasi AI memerlukan backend yang aman untuk menghubungkan aplikasi dengan layanan model AI. Fitur ini tidak boleh dianggap sudah aktif sebelum backend selesai dipasang dan diuji.
+### 💾 8. Penyimpanan Data
+Data aplikasi disimpan menggunakan `localStorage` pada browser sehingga dapat tetap tersedia ketika halaman dimuat ulang pada browser dan perangkat yang sama.
 
 ## 🛠️ Teknologi yang Digunakan
 
 | Teknologi | Pemanfaatan |
 |---|---|
-| HTML5 | Membuat struktur halaman dan komponen aplikasi. |
-| CSS3 | Mengatur desain, warna, tata letak, dan tampilan responsif. |
-| JavaScript | Mengelola transaksi, perhitungan saldo, navigasi, validasi, dan interaksi. |
-| LocalStorage | Menyimpan data aplikasi di browser. |
-| Git dan GitHub | Mengelola versi kode dan menyimpan repository proyek. |
-| GitHub Pages (jika diaktifkan) | Mempublikasikan aplikasi web statis. |
-| Backend API (untuk integrasi AI) | Menghubungkan frontend dengan layanan AI secara aman. |
+|  HTML5 | Membuat struktur halaman dan komponen aplikasi. |
+|  CSS3 | Mengatur desain, warna, tata letak, dan tampilan responsif. |
+|  JavaScript | Mengelola transaksi, perhitungan saldo, navigasi, validasi, dan interaksi. |
+|  LocalStorage | Menyimpan data aplikasi di browser. |
+|  Git dan GitHub | Mengelola versi kode dan menyimpan repository proyek. |
+|  GitHub Pages | Mempublikasikan aplikasi web agar dapat diakses melalui internet. |
+|  Backend API | Direncanakan untuk menghubungkan frontend dengan layanan AI secara aman apabila integrasi AI dikembangkan. |
 
 ## 🤖 Pemanfaatan Kecerdasan Buatan (AI)
 
-AI direncanakan untuk mendukung pengembangan fitur **AI Logbook**, yaitu pendamping refleksi keuangan bagi pelajar.
+### Alat AI yang Digunakan
+- ChatGPT
+- Claude (Anthropic)
 
-### Manfaat AI Logbook
+AI digunakan sebagai alat bantu selama proses perancangan ide, penyusunan kode, pemahaman struktur program, dan pemeriksaan kesalahan.
 
-- Membuat ringkasan kebiasaan pengeluaran berdasarkan data yang diberikan.
-- Membantu pengguna mengevaluasi keputusan membeli sesuatu.
-- Memberikan saran penghematan yang sederhana dan realistis.
-- Membantu menyusun refleksi harian tentang pengelolaan uang.
-- Memberikan ide untuk mencapai target tabungan.
+### 💬 Contoh Prompt yang Digunakan
 
-### Contoh Hasil AI Logbook
+1. "Bantu saya merancang website Uang Jajan Pintar untuk membantu pelajar mencatat uang jajan dan mengatur tabungan."
+2. "Bantu saya menyusun struktur HTML untuk website Uang Jajan Pintar."
+3. "Bantu saya membuat CSS agar tampilan website lebih rapi dan mudah digunakan."
+4. "Bantu saya memahami JavaScript untuk mencatat transaksi dan menghitung sisa uang."
+5. "Bantu saya memeriksa kesalahan kode dan menguji fitur website."
 
-**Ringkasan:** Pengeluaran hari ini sebesar Rp12.000.
+### 🔧 Penyesuaian dan Perbaikan Mandiri
 
-**Refleksi:** Coba periksa apakah pengeluaran tersebut sudah sesuai dengan kebutuhanmu.
-
-**Saran:** Tentukan batas uang jajan untuk besok dan sisihkan uang tabungan terlebih dahulu.
-
-Contoh tersebut hanya ilustrasi. Hasil sebenarnya bergantung pada data yang diberikan dan integrasi AI yang digunakan.
-
-### Arsitektur Integrasi AI
-
-1. Pengguna membuka halaman AI Logbook.
-2. Aplikasi menyiapkan ringkasan transaksi yang relevan.
-3. Frontend mengirim ringkasan ke backend melalui API.
-4. Backend memvalidasi permintaan dan meneruskannya ke layanan AI.
-5. Backend mengirim hasil analisis kembali ke aplikasi.
-6. Pengguna membaca refleksi dan saran yang dihasilkan.
-
-**Keamanan:** API key wajib disimpan di lingkungan backend, bukan di HTML, CSS, JavaScript frontend, atau repository publik. AI hanya memberikan analisis dan saran; perhitungan saldo resmi tetap dikendalikan oleh logika aplikasi.
+- Kami memeriksa kembali saran dan kode yang diberikan AI sebelum menggunakannya. Kami menyesuaikan struktur file HTML, CSS, dan JavaScript dengan kebutuhan proyek, memeriksa penulisan kode, serta menguji fitur website secara langsung.
+- Pengujian menunjukkan bahwa perhitungan sisa uang sebesar Rp13.000 berhasil pada skenario uji, tombol hapus dan perhitungan saldo berfungsi, serta data tetap tersimpan setelah halaman dimuat ulang.
+- AI digunakan sebagai alat bantu. Pemeriksaan, pengujian, dan pemahaman terhadap kode tetap menjadi tanggung jawab pengembang.
 
 ## 📖 Panduan Penggunaan
 
 ### 1. Membuka Website
-`https://sifaidha27.github.io/uang-jajan-pintar2/`
+Buka tautan website berikut melalui browser:
+
+🔗 https://sifaidha27.github.io/uang-jajan-pintar2/
 
 ### 2. Mengisi Informasi Awal
 Ikuti formulir awal aplikasi untuk memasukkan nama dan informasi uang jajan sesuai petunjuk yang tersedia.
@@ -120,69 +101,25 @@ Buka menu **Target**, masukkan nama target dan nominal yang ingin dicapai. Lakuk
 ### 6. Melihat Lencana
 Buka menu **Lencana** untuk melihat pencapaian yang diperoleh dari aktivitas dalam aplikasi.
 
-### 7. Menggunakan AI Logbook
-Jika fitur AI Logbook sudah diaktifkan, buka menu tersebut, minta refleksi berdasarkan ringkasan keuangan, lalu baca saran yang diberikan. Periksa kembali saran AI dan gunakan pertimbangan pribadi sebelum mengambil keputusan.
-
-### 8. Menjaga Data
+### 7. Menjaga Data
 Gunakan browser dan perangkat yang sama untuk mengakses data yang tersimpan secara lokal. Menghapus data situs atau menggunakan browser lain dapat menyebabkan data lokal tidak tersedia. Ekspor atau cadangkan data jika fitur tersebut tersedia.
-
-## 🧪 Pengujian Aplikasi
-
-Pengujian yang disarankan meliputi:
-
-- Memastikan pemasukan dan pengeluaran tercatat dengan benar.
-- Memeriksa kesesuaian saldo setelah transaksi ditambahkan atau dihapus.
-- Memastikan setoran tabungan mengurangi saldo pos yang benar.
-- Memeriksa kemajuan target tabungan.
-- Memastikan data tetap tersedia setelah halaman dimuat ulang.
-- Memastikan tampilan bekerja di HP dan komputer.
-- Memastikan fitur AI menampilkan pesan yang sesuai jika backend tidak tersedia.
-- Memastikan API key tidak dapat diakses dari frontend atau repository publik.
-
-Hasil pengujian harus diisi berdasarkan pemeriksaan yang benar-benar dilakukan.
-
-## 🔐 Privasi dan Keamanan
-
-- Data yang tersimpan di `localStorage` berada di browser pengguna.
-- Data lokal tidak otomatis tersinkronisasi ke perangkat lain.
-- Hindari memasukkan informasi pribadi yang tidak diperlukan.
-- Untuk integrasi AI, kirim hanya ringkasan data yang diperlukan.
-- Lindungi kredensial backend dan batasi permintaan API.
-- Periksa kembali saran AI karena hasilnya dapat kurang tepat.
-
-## 🚀 Pengembangan Selanjutnya
-
-Rencana pengembangan Uang Jajan Pintar 2 meliputi:
-
-1. Integrasi AI Logbook dengan backend yang aman.
-2. Riwayat refleksi keuangan harian dan mingguan.
-3. Analisis tren pengeluaran.
-4. Rekomendasi penghematan berdasarkan kebiasaan pengguna.
-5. Peningkatan aksesibilitas dan pengalaman pengguna.
-6. Pengujian keamanan dan keandalan aplikasi.
 
 ## 👥 Identitas Pengembang / Anggota
 
-**Nama proyek:** Uang Jajan Pintar 2
+**📌 Nama proyek:** Uang Jajan Pintar
 
-**Nama repository:** `uang-jajan-pintar2`
+**📂 Nama repository:** `uang-jajan-pintar2`
 
-**Pemilik repository GitHub:** `sifaidha27`
+**🐙 Pemilik repository GitHub:** `sifaidha27`
 
-**Nama anggota/pengembang:** Syah Irfan Gaotama & Sifa Nur Idha 
+**🏫 Asal sekolah:** SMA Muhammadiyah 2 Sumberpucung
 
-**Asal sekolah/kelas:** SMA MUHAMMADIYAH 2 SUMBERPUCUNG
-
-**Peran:** Pengembangan aplikasi web, desain antarmuka, pengujian fitur, dan dokumentasi proyek.
-
-Jika proyek dikerjakan secara berkelompok, tambahkan seluruh anggota beserta perannya:
-
-| No. | Nama anggota | Peran |
+| No. | Nama Anggota | Peran |
 |---|---|---|
-| 1 | Syah Irfan Gaotama | Pengembang |
-| 2 |Sifa Nur Idha | Pengembang |
+| 1 | Syah Irfan Gaotama |  Pengembang |
+| 2 | Sifa Nur Idha |  Pengembang |
 
-*Hapus baris anggota yang tidak diperlukan dan isi informasi sesuai kondisi sebenarnya.*
+**🎓 Kelas/Jurusan:** XI/Informatika
 
 ## 📂 Struktur Repository
 
@@ -191,18 +128,14 @@ uang-jajan-pintar2/
 ├── index.html
 ├── style.css
 ├── script.js
-├── AI.LOGBOOK.md
+├── AI_LOGBOOK.md
 └── README.md
-
 ```
-
-
-## 📄 Lisensi
-
-Lisensi proyek belum ditentukan. Jika ingin mengizinkan orang lain menggunakan, mempelajari, atau mengembangkan kode, tentukan lisensi yang sesuai dan tambahkan file `LICENSE`.
 
 ## 💡 Penutup
 
-Uang Jajan Pintar 2 merupakan proyek pembelajaran yang bertujuan membantu pelajar membangun kebiasaan keuangan yang lebih baik melalui teknologi web.
+Uang Jajan Pintar merupakan proyek pembelajaran yang bertujuan membantu pelajar membangun kebiasaan keuangan yang lebih baik melalui teknologi web.
 
-Dengan pengembangan berkelanjutan dan integrasi AI yang aman, aplikasi ini diharapkan dapat menjadi sarana belajar literasi keuangan yang mudah dipahami, bermanfaat, dan sesuai dengan kebutuhan pelajar.# uang-jajan-pintar2
+Dengan pengembangan berkelanjutan dan integrasi AI yang aman, aplikasi ini diharapkan dapat menjadi sarana belajar literasi keuangan yang mudah dipahami, bermanfaat, dan sesuai dengan kebutuhan pelajar.
+
+🚀 **Belajar mengatur uang sejak dini, mulai dari langkah kecil bersama Uang Jajan Pintar!** 💰
