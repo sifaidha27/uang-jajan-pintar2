@@ -1,4 +1,4 @@
-# 💰 Uang Jajan Pintar 2
+# 💰 Uang Jajan Pintar 
 
 **Website pencatatan dan pengelolaan uang jajan untuk membantu pelajar belajar mengatur keuangan sejak dini.**
 
