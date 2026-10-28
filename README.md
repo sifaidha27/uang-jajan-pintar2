@@ -16,10 +16,10 @@ Target pengguna website ini adalah pelajar yang ingin belajar mengelola uang jaj
 
 ## ✨ Fitur Aplikasi
 
-### 🏠 1. Beranda
+###  1. Beranda
 Menampilkan ringkasan kondisi keuangan pengguna, termasuk saldo dan informasi pengelolaan uang.
 
-### 📝 2. Pencatatan Transaksi
+###  2. Pencatatan Transaksi
 Pengguna dapat mencatat uang masuk dan pengeluaran berdasarkan kategori, seperti:
 - 🍜 Jajan
 - 🚌 Transportasi
@@ -27,22 +27,22 @@ Pengguna dapat mencatat uang masuk dan pengeluaran berdasarkan kategori, seperti
 - 🤝 Berbagi
 - 📦 Lainnya
 
-### 💵 3. Pembagian Uang
+###  3. Pembagian Uang
 Membantu pengguna membagi uang ke dalam pos jajan, tabungan, dan berbagi sesuai persentase yang ditentukan.
 
-### 🎯 4. Target Tabungan
+###  4. Target Tabungan
 Pengguna dapat membuat target tabungan, menentukan nominal yang dibutuhkan, melakukan setoran, dan memantau kemajuan target.
 
-### 🧮 5. Kalkulator Tabungan
+###  5. Kalkulator Tabungan
 Membantu memperkirakan waktu yang diperlukan untuk mencapai target berdasarkan jumlah tabungan per hari.
 
-### 📊 6. Riwayat dan Grafik
+###  6. Riwayat dan Grafik
 Membantu pengguna melihat catatan keuangan dan memahami kebiasaan pengeluaran.
 
-### 🏆 7. Poin, Streak, Tantangan, dan Lencana
+###  7. Poin, Streak, Tantangan, dan Lencana
 Mendorong pengguna untuk rutin mencatat transaksi dan membangun kebiasaan mengatur uang.
 
-### 💾 8. Penyimpanan Data
+###  8. Penyimpanan Data
 Data aplikasi disimpan menggunakan `localStorage` pada browser sehingga dapat tetap tersedia ketika halaman dimuat ulang pada browser dan perangkat yang sama.
 
 ## 🛠️ Teknologi yang Digunakan
@@ -106,22 +106,22 @@ Gunakan browser dan perangkat yang sama untuk mengakses data yang tersimpan seca
 
 ## 👥 Identitas Pengembang / Anggota
 
-**📌 Nama proyek:** Uang Jajan Pintar
+**Nama proyek:** Uang Jajan Pintar
 
-**📂 Nama repository:** `uang-jajan-pintar2`
+**Nama repository:** `uang-jajan-pintar2`
 
-**🐙 Pemilik repository GitHub:** `sifaidha27`
+**Pemilik repository GitHub:** `sifaidha27`
 
-**🏫 Asal sekolah:** SMA Muhammadiyah 2 Sumberpucung
+**Asal sekolah:** SMA Muhammadiyah 2 Sumberpucung
 
 | No. | Nama Anggota | Peran |
 |---|---|---|
 | 1 | Syah Irfan Gaotama |  Pengembang |
 | 2 | Sifa Nur Idha |  Pengembang |
 
-**🎓 Kelas/Jurusan:** XI/Informatika
+**Kelas/Jurusan:** XI/Informatika
 
-## 📂 Struktur Repository
+##  Struktur Repository
 
 ```text
 uang-jajan-pintar2/
